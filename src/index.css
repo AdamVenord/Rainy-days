@@ -19,6 +19,10 @@ body {
   background-image: url('./imgs/warm.png');
 }
 
+.app.rain {
+  background-image: url('./imgs/rain.png');
+}
+
 main {
   min-height: 100vh;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.75));

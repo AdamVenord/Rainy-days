@@ -21,18 +21,24 @@ function App() {
     }
   }
 
+  // making a note of that
+  // theres a possibility that I could use switch apis to go back and fourth between celcius
+  // and farenheight
+  // look into it more next time you slam into this bad boy of a project
+
+
   const dateBuilder = (d) => {
     let months = ["January", "February", "March", "April", "May", "June", "July", "August",
       "September", "October", "November", "December"];
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", 
       "Saturday"];
-    
-    let day = days[d.getDay()];
-    let date = d.getDate();
-    let month = months[d.getMonth()];
-    let year = d.getFullYear();
-    return `${day} ${date} ${month} ${year}`
-  }
+      
+      let day = days[d.getDay()];
+      let date = d.getDate();
+      let month = months[d.getMonth()];
+      let year = d.getFullYear();
+      return `${day} ${date} ${month} ${year}`
+    }
   return (
     <div className={(typeof weather.main != "undefined") 
       ? ((weather.main.temp > 16 ) 
@@ -44,14 +50,14 @@ function App() {
           <input 
             type="text"
             className="search-bar"
-            placeHolder="Search..."
+            placeHolder="Search A City..."
             onChange={e =>setQuery(e.target.value)}
             value={query}
             onKeyPress={search}
-          />
+            />
         </div>
         {(typeof weather.main != "undefined") ? (
-        <div>
+          <div>
           <div className="location-box">
             <div className="location">{weather.name}, {weather.sys.country}</div>
             <div className="date">{dateBuilder(new Date())}</div>
